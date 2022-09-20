@@ -1,0 +1,41 @@
+Description:
+Computes the Gaussian blur of an image, with filename & standard deviation (blur strength) inputs.
+Outputs an image of the same format, including the standard deviation used in the file name.
+
+Included files:
+ - gaussian_blur.py
+ - README
+
+Inputs:
+sdev (float):
+    The standard deviation of the n x n Gaussian matrix. n is the side length
+    of the matrix, which is given as ceil(4*sdev). The matrix will cover at least
+    four standard deviations of the Gaussian distributionl; n is guaranteed to be an odd
+    value such that our distribution is centered around the center of the matrix.
+
+filename (string):
+    The name of the image to blur. Note: The extension must be included, and it must be a
+    supported RGB image file format by Pillow:
+    https://pillow.readthedocs.io/en/stable/handbook/image-file-formats.html#fully-supported-formats
+
+Outputs:
+savedfilename (image, format dependent on input used):
+    The blurred image, given by 'blurred_sdev=<sdev>_filename'. This is given in the terminal.
+
+Assumptions:
+ - The standard deviation is a positive, nonzero float.
+ - The image is RGB.
+ - The image is supported by Pillow.
+
+Instructions:
+ - Make sure that NumPy & Pillow libraries are installed:
+    - 'pip install Pillow'
+    - 'pip install numpy'
+    
+ - To run the program (using the command line):
+    - $ python3 gaussian_blur.py (Bash)
+    - $ python gaussian_blur.py (PowerShell)
+
+ - Follow the instructions as printed in the command line.
+   Note that the time to compute the blur will depend on the size of the image, as well as the 
+   standard deviation. Larger images and/or standard deviations will increase the time taken.
